@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Specifications</title>
+    <link rel="stylesheet" href="statics/style.css">
+</head>
+
+<body>
+
+    <div style="text-align: center; margin: 20px;" class="shadowDiv">
+        <form method=POST enctype=multipart/form-data action="{{ url_for('selectedTarget') }}">
+            <h3 class="font">Select Model Type: </h3>
+            <select style="padding: 10px; margin: 5px" name="modelType" onchange="modelChanged()">
+                <option>Classification</option>
+                <option>Regression</option>
+            </select>
+            <h3>Select Your Target Varible: </h3>
+            <select style="margin:10px" name="targetColumn">
+                {% for column in columns %}
+                <option value="{{ column }}">{{ column }}</option>
+                {% endfor %}
+            </select>
+            <div id="scoringMethodDiv">
+                <h3>Select The Scoring Matric: </h3>
+                <select id="scoringMethodSelect" name="scoringMethodSelect">
+                </select>
+            </div>
+            <h3>DataFrame Shape: {{ dfShape }}</h3>
+            <input type="submit" class="button-54" value="Submit">
+        </form>
+        <div class="tableParent">
+            {{ df.to_html() | safe}}
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>
+
+<script>
+
+    var classificationScoringMatrics = ['accuracy', 'precision', 'recall', 'f1', 'roc_auc', 'neg_log_loss', 'balanced_accuracy']
+    var regressionScoringMatrics = ['explained_variance', 'neg_mean_absolute_error', 'neg_mean_squared_error', 'neg_mean_squared_log_error', 'neg_median_absolute_error', 'r2', 'max_error']
+
+    window.addEventListener('DOMContentLoaded', function () {
+        var selectElement = document.querySelector('[name="modelType"]');
+        var selectedValue = selectElement.value;
+        if (selectedValue == 'Classification') {
+            for (i in classificationScoringMatrics) {
+                var option = document.createElement('option');
+                option.value = classificationScoringMatrics[i];
+                option.text = classificationScoringMatrics[i];
+                var selectElement = document.getElementById('scoringMethodSelect');
+                selectElement.appendChild(option)
+            }
+        } else {
+            for (i in regressionScoringMatrics) {
+                var option = document.createElement('option');
+                option.value = regressionScoringMatrics[i];
+                option.text = regressionScoringMatrics[i];
+                var selectElement = document.getElementById('scoringMethodSelect');
+                selectElement.appendChild(option)
+            }
+        }
+    });
+
+    function modelChanged() {
+        var selectElement = document.querySelector('[name="modelType"]');
+        var selectedValue = selectElement.value;
+        var scoringMethodSelect = document.getElementById('scoringMethodSelect');
+        scoringMethodSelect.innerHTML = "";
+        if (selectedValue == 'Classification') {
+            for (i in classificationScoringMatrics) {
+                var option = document.createElement('option');
+                option.value = classificationScoringMatrics[i];
+                option.text = classificationScoringMatrics[i];
+                scoringMethodSelect.appendChild(option)
+            }
+        } else {
+            for (i in regressionScoringMatrics) {
+                var option = document.createElement('option');
+                option.value = regressionScoringMatrics[i];
+                option.text = regressionScoringMatrics[i];
+                scoringMethodSelect.appendChild(option)
+            }
+        }
+    }
+
+</script>

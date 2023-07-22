@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Models Details</title>
+    <link rel="stylesheet" href="statics/style.css">
+</head>
+
+<body>
+
+    <h1 style="opacity: 0.8;">Models Average K-Fold Scores</h1>
+    <h5>Scoring Matric: {{ scoringMatric }}</h5>
+
+    <div>
+        <div class="keywordCardsContainerRow">
+            <div class="row">
+                {% for i in range(modelsLength) %}
+                <div class="column">
+                    <div class="card">
+                        <h3 style="opacity: 0.8;">{{ modelNames[i] }}</h3>
+                        <h3 style="opacity: 0.8;">{{ modelAverageScore[i] }}</h3>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+</body>
+
+</html>

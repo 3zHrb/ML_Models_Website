@@ -1,0 +1,217 @@
+body {
+    padding: 0;
+    font-family: optima, sans-serif;
+    /* font-family: "WarnerShield 90's", sans-serif; */
+    background-color: #FFE4C4;
+    text-align: center;
+}
+
+/* .font {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: small;
+    color: blue;
+} */
+
+
+.main-container {
+    background-color: blue;
+    text-align: center;
+    padding: 5px;
+}
+
+
+.websiteBrief {
+    text-align: center;
+}
+
+.submitButton {
+    background-color: red;
+    padding: 10px;
+    border: none;
+}
+
+.shadowDiv {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    transition: all 0.1s ease 0s;
+    border-radius: 5px;
+    padding: 10px;
+    opacity: 0.8;
+    background-color: #7FFFD4;
+}
+
+
+.customButton {
+    border-radius: 2px;
+    background-color: #FFE4C4;
+    color: #585858;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.customButton :focus {
+    /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
+    box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+    transform: translateY(-0.25em);
+}
+
+@media (min-width: 768px) {
+    .button-54 {
+        padding: 0.25em 0.75em;
+    }
+}
+
+
+input[type="file"] {
+    z-index: -1;
+    top: 10px;
+    left: 8px;
+    font-size: 17px;
+    color: #b8b8b8;
+}
+
+/* table styling*/
+
+.tableParent {
+    display: flex;
+    flex-direction: column;
+}
+
+table {
+    /* table-layout: fixed;*/
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    /* max-width: 150px; */
+    /* width: 80%; */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    /* overflow-y: scroll; */
+}
+
+
+table thead tr {
+    background-color: #7FFFD4;
+    color: white;
+    text-align: left;
+}
+
+table th,
+table td {
+    padding: 6px 10px;
+    /* overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; */
+}
+
+table th {
+    color: #292725;
+}
+
+/* table td {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+} */
+
+table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+table tbody tr:nth-of-type(odd) {
+    background-color: #FFE4C4;
+}
+
+table tbody tr:last-of-type {
+    border-bottom: 2px solid #7FFFD4;
+}
+
+table tbody tr.active-row {
+    font-weight: bold;
+    color: #7FFFD4;
+}
+
+select {
+    color: #292725;
+    background-color: #FFE4C4;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+
+
+.button-54 {
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    letter-spacing: 2px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #000;
+    cursor: pointer;
+    border: 3px solid;
+    padding: 0.25em 0.5em;
+    box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
+    position: relative;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.button-54:active {
+    box-shadow: 0px 0px 0px 0px;
+    top: 5px;
+    left: 5px;
+}
+
+
+
+/* Float four columns side by side */
+.column {
+    float: left;
+    padding: 0 10px;
+    margin: 20px;
+    width: 20%;
+}
+
+
+/* Responsive columns */
+@media screen and (max-width: 600px) {
+    .column {
+        width: 100%;
+        display: block;
+        margin-bottom: 20px;
+    }
+}
+
+/* Style the counter cards */
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    padding: 16px;
+    text-align: center;
+    background-color: #7FFFD4;
+    border-radius: 5px;
+    color: black;
+    margin: 20px;
+}
+
+.card h3 {
+    opacity: 0.8;
+}
+
+.keywordCardsContainer {
+    float: left;
+    padding: 0 0px;
+    margin: 4px;
+    width: 2%;
+    display: table;
+}
+
+.keywordCards {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    padding: 4px;
+    text-align: center;
+    background-color: #7FFFD4;
+    border-radius: 5px;
+    color: black;
+    margin: 1px;
+}
